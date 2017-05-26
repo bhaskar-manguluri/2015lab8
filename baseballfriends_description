@@ -1,0 +1,9 @@
+ Each row of this csv file contains the following:
+
+    A person's name
+    The team that person is rooting for -- either "Cardinals" or "Red Sox"
+    A list of that person's friends, which could have arbitrary length
+
+
+For  example: The first line tells us that Aaden is a Red Sox fan and he  has 65  friends, who are all listed here. For this problem, it's safe to  assume  that all of the names are unique and that the friendship  structure is  symmetric (i.e. if Alannah shows up in Aaden's friends list, then Aaden will show up in Alannah's friends list).
+Write  an mr job that lists each person's name, their favorite  team, the  number of Red Sox fans they are friends with, and the number  of  Cardinals fans they are friends with.
