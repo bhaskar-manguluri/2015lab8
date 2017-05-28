@@ -11,4 +11,4 @@ class anagram(MRJob):
 
 if __name__=='__main__':
     anagram.run() 
-
+#anagram.run()

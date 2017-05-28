@@ -10,7 +10,7 @@ class MRAnagram(MRJob):
         # key is the sorted word, value is the regular word
         yield letters,line
 
-    def reducer(self,_,words)
+    def reducer(self,_,words):
         # Get the iterator of words for each key
         anagrams = [w for w in words]
         
