@@ -1,5 +1,5 @@
 from mrjob.job import MRJob
-import numpy as np
+#this gives different output to version 1,=> we cant use same combiner and reducer, because mean of means is different from mean of numbers , although they covert at large numbers
 class mrmean(MRJob):
 
     def mapper(self,ikey,line):
@@ -9,16 +9,26 @@ class mrmean(MRJob):
         value = float(value)
         yield key,value
 
-    def reducer(self,key,generator_of_values):
+    def combiner(self,key,generator_of_values):
         sum = 0
         count = 0
-        # why is this a generator,expected list Iterator
         for i in generator_of_values:
             sum = sum + i
             count = count + 1 
         
         avg = sum/count
         yield key,avg
+
+    def reducer(self,key,generator_of_values):
+        sum = 0
+        count = 0
+        for i in generator_of_values:
+            sum = sum + i
+            count = count + 1 
+        
+        avg = sum/count
+        yield key,avg
+
 
 if __name__ == "__main__":
     mrmean.run()
