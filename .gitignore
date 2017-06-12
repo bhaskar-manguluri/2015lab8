@@ -2,3 +2,5 @@
 .ipynb_checkpoints/
 *.pem
 dump.txt
+kaggle_rottenTmts_neg_reviews.txt/
+*.tsv
